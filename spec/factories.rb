@@ -4,12 +4,13 @@ FactoryGirl.define do
   
   factory :product do |t|
   	t.name "Ray Ban"
-    t.description "oculos de sol"
-    t.price "320"
+    t.description "for summer"
+    t.price 320.0
+    t.association :categorie
   end
 
 	factory :categorie do |t|
-  	t.name "sol"
+  	t.name "beach"
   end
 
 end

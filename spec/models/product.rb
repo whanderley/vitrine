@@ -18,6 +18,16 @@ describe Product do
 
   it "is invalid without price" do
     FactoryGirl.build(:product, price: nil).should_not be_valid
-  end  
+  end
+
+  it "is invalid without categorie" do
+    FactoryGirl.build(:product, categorie: nil).should_not be_valid
+  end
+
+  it "return the category name when categorie_name is invoked" do
+    categorie = FactoryGirl.build(:categorie, name: 'black')
+    product = FactoryGirl.build(:product, categorie: categorie)
+    product.categorie_name.should == "black"
+  end
 
 end
